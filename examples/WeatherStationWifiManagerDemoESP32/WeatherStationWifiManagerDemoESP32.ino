@@ -57,8 +57,11 @@ void drawIndoor(OLEDDisplay *display, OLEDDisplayUiState *state, int16_t x, int1
 void setReadyForWeatherUpdate();
 void setReadyForTempHumidUpdate();
 void setUpWiFi();
+void onWifiConfigPortalTimeout();
 void disableWiFi();
 void enableWiFi();
+void connectToWifi();
+void onWiFiEvent(WiFiEvent_t event);
 void configModeCallback(WiFiManager *myWiFiManager);
 void connectToMqtt();
 void onMqttConnect(bool sessionPresent);
