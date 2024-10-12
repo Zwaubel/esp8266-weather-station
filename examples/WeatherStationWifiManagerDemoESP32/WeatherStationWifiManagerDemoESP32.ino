@@ -151,7 +151,6 @@ long timeSinceLastTempHumidUpdate = 0;
 // #define TempHumidTYPE TempHumidesp::AM2302   // TempHumid22  (AM2302), AM2321
 Adafruit_AHTX0 aht;
 // Initialize the temperature/ humidity sensor
-// TempHumidesp dht;
 float humidity = 0.0;
 float temperature = 0.0;
 
@@ -177,7 +176,7 @@ void setup()
   Serial.begin(115200);
   Serial.println();
 
-  // initialize dispaly
+  // initialize display
   display.init();
   display.clear();
   display.display();
@@ -219,14 +218,13 @@ void setup()
 
   ui.setOverlays(overlays, numberOfOverlays);
 
-  // Inital UI takes care of initalising the display too.
+  // Inital UI takes care of initialising the display too.
   ui.init();
 
-  // initialize dht
-  // dht.setup(TempHumidPIN, TempHumidTYPE); // Connect TempHumid sensor to GPIO 17
+  // initialize temperature and humidity sensor
   if (!aht.begin())
   {
-    Serial.println(F("Could not find AHT? Check wiring"));
+    Serial.println(F("Could not find AHT. Check the wiring!"));
     while (1)
       delay(10);
   }

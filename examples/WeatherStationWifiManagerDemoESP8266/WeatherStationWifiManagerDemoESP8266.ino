@@ -183,7 +183,7 @@ void setup() {
   Serial.begin(115200);
   Serial.println();
 
-  // initialize dispaly
+  // initialize display
   display.init();
   display.clear();
   display.display();
@@ -237,7 +237,7 @@ void setup() {
 
   ui.setOverlays(overlays, numberOfOverlays);
 
-  // Inital UI takes care of initalising the display too.
+  // Inital UI takes care of initialising the display too.
   ui.init();
 
   Serial.println("");
